@@ -22,8 +22,7 @@ reminderJob();
 
 //Routes
 app.use('/user',require('./routes/userAuth'));
-
-
+app.use('/health',require('./routes/healthRecord'));
 app.listen(port,()=>{
     console.log(`server running on port ${port}`);
 })

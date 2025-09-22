@@ -11,6 +11,9 @@ const app = express();
 //Middle ware
 app.use(cors());
 app.use(express.json());
+app.use('/api/qrcode', require('./qr_notifications/routes/qrRoutes'));
+app.use('/api/notify', require('./qr_notifications/routes/notificationRoutes'));
+
 //DataBase
 mongoose.connect(mongo_Url).then(()=>{
     console.log("DataBase connected sucessfully");

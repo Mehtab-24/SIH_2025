@@ -1,7 +1,10 @@
-
-require('dotenv').config();
 const express = require('express');
 
+
+const mongoose = require('mongoose');
+const cors = require('cors');
+
+=======
 const mongoose = require('mongoose');
 const cors = require('cors');
 
@@ -26,8 +29,7 @@ mongoose.connect(mongo_Url).then(()=>{
 
 //Routes
 app.use('/user',require('./routes/userAuth'));
-
-
+app.use('/health',require('./routes/healthRecord'));
 app.listen(port,()=>{
     console.log(`server running on port ${port}`);
     
